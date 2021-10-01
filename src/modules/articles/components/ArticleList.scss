@@ -1,0 +1,13 @@
+.article-list-component {
+  padding: 2rem;
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    li {
+      border: 1px solid #e2e2e2;
+      border-radius: 0.5rem;
+    }
+  }
+
+}

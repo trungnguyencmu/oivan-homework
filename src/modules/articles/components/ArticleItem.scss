@@ -1,0 +1,50 @@
+@import "configs/scss/scss-variables.scss";
+
+.article-item-component {
+  figure {
+    margin: 0;
+    max-height: 220px;
+    overflow: hidden;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: relative;
+  }
+  img {
+    width: 100%;
+  }
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+  }
+  h3 {
+    color: white;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.5rem 0.75rem;
+    color: $primary-text;
+    &.subtitle {
+      padding: 0.1rem 0.75rem;
+      color: $secondary-text;;
+    }
+  }
+  a {
+    float: right;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background-color: goldenrod;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.25rem;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+
+}
