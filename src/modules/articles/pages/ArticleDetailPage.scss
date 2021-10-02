@@ -1,11 +1,11 @@
 .article-detail-page-component {
+  min-height: 100vh;
   padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   h1 {
-    width: 70%;
     margin-bottom: 50px;
   }
   .content-article {
@@ -16,5 +16,23 @@
     img {
       margin-bottom: 24px;
     }
+  }
+}
+.wrap-no-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .no-content-article {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    padding: 20px;
+    border: solid 1px #cecece;
+    width: 200px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

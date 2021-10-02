@@ -3,6 +3,7 @@ import ArticleItem from "./ArticleItem";
 import "./ArticleList.scss";
 
 const ArticleList = ({ articles = [] }) => {
+  console.log("articles", articles);
   return (
     <section className="article-list-component" id="scroll-area">
       <ul>
@@ -15,4 +16,4 @@ const ArticleList = ({ articles = [] }) => {
     </section>
   );
 };
-export default ArticleList;
+export default React.memo(ArticleList);

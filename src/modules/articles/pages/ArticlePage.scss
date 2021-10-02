@@ -1,10 +1,19 @@
 .article-page-component {
+  min-height: 100vh;
   .action-button {
     margin: 24px;
     display: flex;
     justify-content: flex-end;
     button {
       margin: 0 10px;
+    }
+  }
+  ul {
+    li {
+      // box-shadow: rgb(0 0 0 / 13%) 0px 1px 3px, rgb(0 0 0 / 13%) 0px 1px 2px;
+      &:hover {
+        transform: translateY(-5px);
+      }
     }
   }
 }
