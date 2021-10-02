@@ -1,15 +1,13 @@
+import { store } from "app/store";
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-// import { ReactQueryDevtools } from "react-query-devtools";
-
-import { ApiProvider } from "@reduxjs/toolkit/query/react";
-import { api } from "./app/services/articles";
-
-import "./index.scss";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 import WebFont from "webfontloader";
+import App from "./App";
+import "./index.scss";
+import * as serviceWorker from "./serviceWorker";
+
 
 function configFonts() {
   WebFont.load({
@@ -22,12 +20,11 @@ configFonts();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApiProvider api={api}>
+    <Provider store={store}>
       <BrowserRouter>
         <App />
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </BrowserRouter>
-    </ApiProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

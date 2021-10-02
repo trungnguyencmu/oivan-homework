@@ -1,19 +1,29 @@
 import React from "react";
-import ArticleItem from "./ArticleItem";
-import "./ArticleList.scss";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-const ArticleList = ({ articles = [] }) => {
-  console.log("articles", articles);
+import "./ArticleList.scss";
+import ArticleItem from "./ArticleItem";
+
+const ArticleList = ({ articles = [], handleSetPage }) => {
+  console.log("articles?.length", articles?.length);
+  // const fetchMoreData = () => {};
   return (
     <section className="article-list-component" id="scroll-area">
-      <ul>
-        {articles.map((article, index) => (
-          <li key={article.title}>
-            <ArticleItem article={article} />
-          </li>
-        ))}
-      </ul>
+      <InfiniteScroll
+        dataLength={articles.length}
+        next={handleSetPage}
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+      >
+        <ul>
+          {articles.map((article, index) => (
+            <li key={article.title}>
+              <ArticleItem article={article} />
+            </li>
+          ))}
+        </ul>
+      </InfiniteScroll>
     </section>
   );
 };
-export default React.memo(ArticleList);
+export default ArticleList;

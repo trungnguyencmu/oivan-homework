@@ -1,33 +1,23 @@
-import React, { useState } from "react";
-import LoadingOverlay from "react-loading-overlay";
-import "./ArticlePage.scss";
-import { useGetArticlesQuery } from "../../../app/services/articles";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ArticleList from "../components/ArticleList";
-import Button from "components/Button";
+import { selectAllArticles } from "../store/slice";
+import { getArticles } from "../store/thunks";
+import "./ArticlePage.scss";
 const ArticlePage = () => {
   const [page, setPage] = useState(1);
-  const { data, isFetching } = useGetArticlesQuery({ page });
-
-  const handleSetPage = (num) => {
-    if (!isFetching) {
-      window.scrollTo(0, 0);
-      setPage(page + num);
-    }
+  const articles = useSelector(selectAllArticles);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getArticles(page));
+  }, [dispatch, page]);
+  const handleSetPage = () => {
+    setPage(page + 1);
   };
-  if (!data?.articles) {
-    return <LoadingOverlay active={isFetching} spinner />;
-  }
   return (
-    <LoadingOverlay active={isFetching} spinner>
-      <div className="article-page-component">
-        <ArticleList articles={data?.articles} />
-        <div className="action-button">
-          {page > 1 && <Button onClick={() => handleSetPage(-1)}>Previous Page</Button>}
-
-          <Button onClick={() => handleSetPage(1)}>Next Page</Button>
-        </div>
-      </div>
-    </LoadingOverlay>
+    <div className="article-page-component">
+      <ArticleList articles={articles} handleSetPage={handleSetPage} />
+    </div>
   );
 };
 export default React.memo(ArticlePage);
