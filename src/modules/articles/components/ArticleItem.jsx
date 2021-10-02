@@ -2,7 +2,6 @@ import React from "react";
 import "./ArticleItem.scss";
 
 const ArticleItem = ({ article }) => {
-  console.log("article", article);
   return (
     <div className="article-item-component">
       <figure>
