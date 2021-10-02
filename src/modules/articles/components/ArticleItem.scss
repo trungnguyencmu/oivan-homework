@@ -27,31 +27,38 @@
     padding: 0.75rem;
     font-size: 1.25rem;
   }
-
+  .wrap-description {
+    padding: 0.5rem 0.75rem;
+  }
   p {
+    margin: 0;
+    padding: 0;
     font-size: 1rem;
     line-height: 1.5;
-    padding: 0.5rem 0.75rem;
     color: $primary-text;
     word-break: break-all;
     &.description {
-      height: 110px;
+      font-size: 13px;
+      height: 60px;
       overflow: hidden;
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
     }
     &.subtitle {
       color: brown;
       height: 30px;
-      padding: 0.1rem 0.75rem;
     }
   }
   a {
-    float: right;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    background-color: goldenrod;
+    text-decoration: underline !important;
+    font-size: 14px;
+    font-weight: bold;
     text-decoration: none;
-    color: white;
-    border-radius: 0.25rem;
+    color: #F26623;
     text-align: center;
     display: inline-block;
     transition: all 0.3s;

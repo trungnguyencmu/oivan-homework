@@ -11,10 +11,10 @@ const ArticleItem = ({ article }) => {
           <h3>{article?.title}</h3>
         </figcaption>
       </figure>
-      <div>
+      <div className="wrap-description">
         <p className="subtitle">{article?.subtitle}</p>
+        <Link to={`/${encodeURIComponent(article.url)}`}>Read full story ..</Link>
         <p className="description">{article?.description}</p>
-        <Link to={`/${encodeURIComponent(article.url)}`}>View Detail</Link>
       </div>
     </Link>
   );
