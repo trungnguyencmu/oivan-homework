@@ -23,7 +23,25 @@ export const api = createApi({
         `,
       }),
     }),
+    getArticle: builder.query({
+      query: ({ url }) => {
+        return {
+          document: gql`
+            query {
+              article(url: "${url}") {
+                title
+                coverImageUrl
+                description
+                subtitle
+                content
+              }
+            }
+          `,
+        };
+      },
+      transformResponse: (response) => response.article,
+    }),
   }),
 });
 
-export const { useGetArticlesQuery } = api;
+export const { useGetArticlesQuery, useGetArticleQuery } = api;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ArticleItem.scss";
 
 const ArticleItem = ({ article }) => {
@@ -15,7 +16,7 @@ const ArticleItem = ({ article }) => {
       </figure>
       <p className="subtitle">{article?.subtitle}</p>
       <p>{article?.description}</p>
-      <a href="#">View Detail</a>
+      <Link to={`/${encodeURIComponent(article.url)}`}>View Detail</Link>
     </div>
   );
 };
