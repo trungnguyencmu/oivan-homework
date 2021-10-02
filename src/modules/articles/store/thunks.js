@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { GraphQLClient, gql } from "graphql-request";
 import { handleMapperArticle, handleMapperArticles } from "./mapper";
-const graphQLClient = new GraphQLClient("https://iwa-test.herokuapp.com/graphql");
+const graphQLClient = new GraphQLClient(process.env.REACT_APP_GRAPHQL_API);
 
 export const getArticles = createAsyncThunk("get/article-list", async (page) => {
   const query = gql`

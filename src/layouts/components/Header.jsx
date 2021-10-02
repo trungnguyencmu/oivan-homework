@@ -2,8 +2,8 @@ import React from "react";
 import "./Header.scss";
 const Header = () => {
   return (
-    <div class="header">
-      <a href="#default" class="logo">
+    <div className="header">
+      <a href="#default" className="logo">
         Oivan Viet Nam
       </a>
     </div>
