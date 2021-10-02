@@ -3,10 +3,12 @@
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     li {
       border: 1px solid #e2e2e2;
       border-radius: 0.5rem;
+      -webkit-box-shadow: 6px 5px 13px -4px rgba(0,0,0,0.3); 
+      box-shadow: 6px 5px 13px -4px rgba(0,0,0,0.3);
     }
   }
 

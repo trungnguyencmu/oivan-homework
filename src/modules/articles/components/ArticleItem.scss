@@ -1,13 +1,7 @@
 @import "configs/scss/scss-variables.scss";
 
 .article-item-component {
-  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
-    -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
   border-radius: 10px;
-  // box-shadow: 0 1px 3px rgb(0 0 0 / 13%), 0 1px 2px rgb(0 0 0 / 13%);
   &:hover {
     transform: translateY(-5px);
   }
@@ -39,9 +33,15 @@
     line-height: 1.5;
     padding: 0.5rem 0.75rem;
     color: $primary-text;
+    word-break: break-all;
+    &.description {
+      height: 110px;
+      overflow: hidden;
+    }
     &.subtitle {
+      color: brown;
+      height: 30px;
       padding: 0.1rem 0.75rem;
-      color: $secondary-text;;
     }
   }
   a {
